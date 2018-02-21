@@ -126,11 +126,9 @@ if [[ ${flag_update} != "1" ]]; then # if update, don't prompt
     registerPackage "cli" "nvim"
     registerPackage "cli" "tmux"
     registerPackage "cli" "htop"
-    registerPackage "cli" "vhdl"
 
     # Prompt for desktop
     if [[ `getInputBoolean "Would you like to install desktop packages?"` == "1" ]]; then
-        registerPackage "desktop" "i3"
         registerPackage "desktop" "latex"
     fi
 

@@ -1,256 +1,44 @@
-set nocompatible
-set number                      "Line numbers are good
-highlight LineNr ctermfg=grey   "Colored line numbers are better
-set cursorline                  "highlight current line
-set title                       "Titles are cool
-set hidden                      "Hide buffer instead of closing it - stop buffering of empty files
-set pastetoggle=<F2>            "Paste without being smart
-set backspace=indent,eol,start  "Allow backspace in insert mode
-set history=1000                "Store lots of :cmdline history
-set showcmd                     "Show incomplete cmds down the bottom
-set visualbell                  "No sounds
-set noerrorbells                "Removes error bells
-set autoread                    "Reload files changed outside vim
-set autoindent                  "Auto indentation
-set smartindent                 "Smart indentation
-set smartcase                   "Smart casing
-set smarttab                    "Smart tab
-set hlsearch                    "Highlights search results
-set incsearch                   "Includes partial searches
-set showmatch                   "Shows matching braces
-set ignorecase                  "Ignores case in searches
-set shiftround                  "Move word to word with shift navigation
-set history=1000                "Command history
-set undolevels=1000             "Undo history
-set udf                         "Persistant undo across sessions
-set scrolloff=8                 "Makes cursor stay 8 lines away from the top or bottom
-set mouse=""                    "Turns off mouse interaction
-set inccommand=nosplit          "In place substitution preview
-set wildmode=longest:full,full
-"Tabs to spaces
-set tabstop=4 shiftwidth=4 expandtab
+"My init.vim is split into several files for the purposes of keeping things as
+"modular and portable as possible
 
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
-" netrw
-let g:netrw_liststyle=3         "List styles for file explorer
-let g:netrw_altv=1
-let g:netrw_preview=1
-let g:netrw_sort_sequence='[\/]$,*' " sort is affecting only: directories on the top, files below
-let g:netrw_list_hide='.*\.swp$'
-let g:netrw_use_noswf=0
+"Vundle stuff
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" nerdtree
-let NERDTreeShowHidden=1
-let NERDTreeSortOrder=['[\/]$', '*']
-let NERDTreeIgnore=['.*\.swp$', '.*\.swo$', '.*\.pyc$']
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin('~/.config/nvim/bundle')
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "active_filetypes": [],
-    \ "passive_filetypes": ["tex"] }
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
-" Jslint
-if filereadable(expand("~/.config/nvim/webdev.vim"))
-    let g:syntastic_jslint_checkers=['jslint']
-endif
+Plugin 'lervag/vimtex'
+"Plugin 'tpope/vim-fugitive'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'unblevable/quick-scope'
+Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
+Plugin 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
+"Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'mtth/scratch.vim'
+Plugin 'airblade/vim-gitgutter'
 
-function! ToggleErrors()
-    let old_last_winnr = winnr('$')
-    lclose
-    if old_last_winnr == winnr('$')
-        " Nothing was closed, open syntastic error location panel
-        Errors
-    endif
-endfunction
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
-let asmsyntax='armasm'
-let filetype_inc='armasm'
-
-" Key mappings
-let mapleader = "\<Space>"
-let maplocalleader = "\\"
-nnoremap <leader>c :noh<cr>         " Clear search highlighting with <space>c
-nnoremap <tab> :bnext<cr>           " Tab to next buffer
-nnoremap <s-tab> :bprevious<cr>     " Shift-tab to previous buffer
-noremap <Leader><tab> :NERDTreeTabsToggle<CR>
-noremap <Leader>` :call VexToggle("")<CR>
-noremap <Leader>i :exe "normal i".nr2char(getchar())<CR>
-nnoremap <silent> <C-e> :<C-u>call ToggleErrors()<CR>
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
-
-map j gj
-map k gk
-
-" Trigger a highlight in the appropriate direction when pressing these keys:
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
-augroup spell_check
-	autocmd!
-	autocmd FileType no ft setlocal spell spelllang-en_us
-augroup END
-
-if filereadable(expand("~/.config/nvim/python.vim"))
-    source ~/.config/nvim/python.vim
-endif
-
-" Load plugins
-if filereadable(expand("~/.config/nvim/vundle.vim"))
-  source ~/.config/nvim/vundle.vim
-endif
-
-if filereadable(expand("~/.config/nvim/pass.vim"))
-  source ~/.config/nvim/pass.vim
-endif
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<C-j>"
-let g:UltiSnipsJumpForwardTrigger = "<C-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
-
-" colors
-if isdirectory(expand("~/.config/nvim/bundle/vim-colors-solarized/"))
-    let g:solarized_termcolors=256
-    syntax enable
-    set background=dark
-    colorscheme solarized
-endif
-
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
-let &colorcolumn=join(range(81,999),",")
-
-" Undo
-if has('persistent_undo')
-  silent !mkdir ~/.config/nvim/undo > /dev/null 2>&1
-  set undodir=~/.config/nvim/undo
-  set undofile
-endif
-
-" lightline
-set laststatus=2 " no display fix
-set noshowmode
-
-let g:lightline = {
-      \ 'colorscheme': 'powerline',
-      \ 'mode_map': { 'c': 'NORMAL' },
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
-      \   'right': [ [ 'lineinfo', 'syntasticstatus' ],
-      \              [ 'percent' ],
-      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
-      \ },
-      \ 'component_function': {
-      \   'modified': 'LightlineModified',
-      \   'readonly': 'LightlineReadonly',
-      \   'fugitive': 'LightlineFugitive',
-      \   'filename': 'LightlineFilename',
-      \   'fileformat': 'LightlineFileformat',
-      \   'filetype': 'LightlineFiletype',
-      \   'fileencoding': 'LightlineFileencoding',
-      \   'mode': 'LightlineMode',
-      \   'syntasticstatus': 'SyntasticStatuslineFlag',
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-      \ }
-
-function! LightlineModified()
-  return &ft =~ 'help\|vimfiler\|gundo\|NERD' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-endfunction
-
-function! LightlineReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '' : ''
-endfunction
-
-function! LightlineFilename()
-  return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
-        \  &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-        \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
-endfunction
-
-function! LightlineFugitive()
-  if &ft !~? 'vimfiler\|gundo\|NERD' && exists("*fugitive#head")
-    let branch = fugitive#head()
-    return branch !=# '' ? ''.branch : ''
-  endif
-  return ''
-endfunction
-
-function! LightlineFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
-endfunction
-
-function! LightlineFiletype()
-  return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
-endfunction
-
-function! LightlineFileencoding()
-  return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
-endfunction
-
-function! LightlineMode()
-  return winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
-
-if !has('gui_running') " no color fix
-    set t_Co=256
-
-    " Odd `esc` lag fix
-    set ttimeoutlen=10
-    set nottimeout
-    augroup FastEscape
-        autocmd!
-        au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=1000
-    augroup END
-endif
-
-
-" use the previous window to
-
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
-set wildignore+=*vim/backups*
-set wildignore+=*sass-cache*
-set wildignore+=*DS_Store*
-set wildignore+=vendor/rails/**
-set wildignore+=vendor/cache/**
-set wildignore+=*.gem
-set wildignore+=log/**
-set wildignore+=tmp/**
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.svg
-set wildignore+=*.swp,*.pyc,*.bak,*.class,*.orig
-set wildignore+=.git,.hg,.bzr,.svn
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-
-"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-"let g:ctrlp_custom_ignore = {
- " \ 'dir':  '\v[\/]\.(git|hg|svn)$',
- " \ 'file': '\v\.(exe|so|dll)$',
- " \ 'link': 'some_bad_symbolic_links',
- " \ }
- 
-augroup makefile
-     autocmd!
-     autocmd FileType make setlocal noexpandtab
-augroup END
-
-function! s:SetHighlightings()
-    hi Pmenu           guifg=#66D9EF guibg=#000000
-    hi PmenuSel                      guibg=#808080
-    hi PmenuSbar                     guibg=#080808
-    hi PmenuThumb      guifg=#66D9EF
-endfunction
-
-call s:SetHighlightings()
-autocmd ColorScheme * call <SID>SetHighlightings()
-
-" Spell check
-autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us 
-
+"Sourcing for all of my other settings
+source ~/.config/nvim/colors/colorrc.vim
+source ~/.config/nvim/nvimFiles/latex.vim
+source ~/.config/nvim/nvimFiles/syntasticrc.vim
+source ~/.config/nvim/nvimFiles/sniprc.vim
+source ~/.config/nvim/nvimFiles/map.vim
+source ~/.config/nvim/nvimFiles/general.vim
+source ~/.config/nvim/nvimFiles/autocomp.vim
+source ~/.config/nvim/nvimFiles/leader_short.vim
+source ~/.config/nvim/nvimFiles/searching.vim
+source ~/.config/nvim/nvimFiles/gitGutterrc.vim
+source ~/.config/nvim/nvimFiles/ycmrc.vim
