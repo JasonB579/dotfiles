@@ -35,3 +35,5 @@ if [ -r ~/.dir_colors ]; then
     eval $(dircolors ~/.dir_colors);
 fi
 
+alias resedit='vim ~/Documents/resume/jason_blocklove_resume.tex ~/Documents/resume/awesome-cv.cls ~/Documents/resume/resume/*.tex'
+alias caps='xmodmap ~/.xmodmap'

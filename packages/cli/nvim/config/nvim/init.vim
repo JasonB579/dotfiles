@@ -19,12 +19,13 @@ Plugin 'lervag/vimtex'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'unblevable/quick-scope'
 Plugin 'SirVer/ultisnips'
-"Plugin 'honza/vim-snippets'
+Plugin 'honza/vim-snippets'
 Plugin 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 "Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'mtth/scratch.vim'
 Plugin 'airblade/vim-gitgutter'
+Bundle 'itchyny/lightline.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,3 +43,4 @@ source ~/.config/nvim/nvimFiles/leader_short.vim
 source ~/.config/nvim/nvimFiles/searching.vim
 source ~/.config/nvim/nvimFiles/gitGutterrc.vim
 source ~/.config/nvim/nvimFiles/ycmrc.vim
+source ~/.config/nvim/nvimFiles/lightLinerc.vim
