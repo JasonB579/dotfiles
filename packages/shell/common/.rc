@@ -11,7 +11,10 @@ fi
 
 # Tmux as a shell
 if [[ "$TMUX_AS_SHELL" == "1" ]]; then
-	[[ $TERM = "xterm-256color" ]] && { tmux; } # Add && edit 0; for edit like normal shell
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
+
 fi
 
 source ${DOTFILES_DIR}/util/detectos.sh

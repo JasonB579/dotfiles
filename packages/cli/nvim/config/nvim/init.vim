@@ -32,15 +32,15 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 "Sourcing for all of my other settings
-source ~/.config/nvim/colors/colorrc.vim
-source ~/.config/nvim/nvimFiles/latex.vim
-source ~/.config/nvim/nvimFiles/syntasticrc.vim
-source ~/.config/nvim/nvimFiles/sniprc.vim
-source ~/.config/nvim/nvimFiles/map.vim
-source ~/.config/nvim/nvimFiles/general.vim
-source ~/.config/nvim/nvimFiles/autocomp.vim
-source ~/.config/nvim/nvimFiles/leader_short.vim
-source ~/.config/nvim/nvimFiles/searching.vim
-source ~/.config/nvim/nvimFiles/gitGutterrc.vim
-source ~/.config/nvim/nvimFiles/ycmrc.vim
-source ~/.config/nvim/nvimFiles/lightLinerc.vim
+source ~/dotfiles/packages/cli/nvim/config/nvim/colors/colorrc.vim
+source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/latex.vim
+source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/syntasticrc.vim
+source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/sniprc.vim
+source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/map.vim
+source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/general.vim
+source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/autocomp.vim
+source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/leader_short.vim
+source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/searching.vim
+source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/gitGutterrc.vim
+source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/ycmrc.vim
+source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/lightLinerc.vim
