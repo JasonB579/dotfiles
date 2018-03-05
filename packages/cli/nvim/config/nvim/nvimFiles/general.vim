@@ -25,14 +25,16 @@ set autoread
 
 set scrolloff=8
 "number setting toggle
+set number
 set relativenumber
 function! NumberToggle()
   if(&relativenumber == 1)
     set number
 	set norelativenumber
   else
+	set number
     set relativenumber
-	set nonumber
+	"set nonumber
   endif
 endfunc
 

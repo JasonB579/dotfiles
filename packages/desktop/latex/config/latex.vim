@@ -27,4 +27,4 @@ let g:ycm_semantic_triggers.tex = [
 
 " TeX PDF viewer integration
 let g:vimtex_view_method = 'zathura'
-
+echo "Hellow world"
