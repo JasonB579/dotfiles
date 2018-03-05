@@ -22,7 +22,7 @@ let g:lightline = {
       \   'mode': 'LightlineMode',
       \   'syntasticstatus': 'SyntasticStatuslineFlag',
       \ },
-      \ 'separator': { 'left': '', 'right': '' },
+      \ 'separator': { 'left': '', 'right': ''  },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
 
