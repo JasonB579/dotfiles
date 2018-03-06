@@ -44,3 +44,4 @@ fi
 alias resedit='vim ~/Documents/resume/jason_blocklove_resume.tex ~/Documents/resume/awesome-cv.cls ~/Documents/resume/resume/*.tex'
 alias caps='xmodmap ~/.xmodmap'
 alias party='curl parrot.live'
+alias nvimfiles='vim ~/dotfiles/packages/cli/nvim/config/nvim/init.vim ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/*.vim'
