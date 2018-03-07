@@ -22,8 +22,8 @@ let g:lightline = {
       \   'mode': 'LightlineMode',
       \   'syntasticstatus': 'SyntasticStatuslineFlag',
       \ },
-      \ 'separator': { 'left': '', 'right': ''  },
-      \ 'subseparator': { 'left': '', 'right': '' }
+      \ 'separator': { 'left': '', 'right': ''  },
+      \ 'subseparator': { 'left': '|', 'right': '|' }
       \ }
 
 function! LightlineModified()
