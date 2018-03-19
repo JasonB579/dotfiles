@@ -19,23 +19,19 @@ echo "Installing I3"
 cd /tmp
 
 # clone the repository
-git clone https://www.github.com/Airblader/i3 i3-gaps
-cd i3-gaps
+git clone https://www.github.com/JasonB579/i3lock_improved
+cd i3lock_improved
 
-# do this if you want the stable branch, skip it if you want the dev branch (gaps-next)
-git checkout gaps && git pull
-
-# compile & install
-make
-sudo make install
+cp i3lock_improved /usr/bin/i3lock_improved
+cp i3lock_improved /usr/local/bin/i3lock_improved
 
 cd -
-rm -rf /tmp/i3-gaps
+rm -rf /tmp/i3lock_improved
 
 
-mkdir -p $HOME/.i3
+mkdir -p $HOME/.config/i3
 
-ln -sfv ${PACKAGE_INSTALL}/config/i3.config ${HOME}/.i3/config
+ln -sfv ${PACKAGE_INSTALL}/config/i3.config ${HOME}/.config/i3/config
 
 # ##############################
 #         XFCE Terminal        #
@@ -48,39 +44,11 @@ mkdir -p $HOME/.config/xfce4/terminal/
 ln -sfv ${PACKAGE_INSTALL}/config/terminalrc $HOME/.config/xfce4/terminal/
 
 # ##############################
-#        i3locks/status        #
+#            Rofi              #
 # ##############################
 
-echo "Setting up i3 lock and status"
+echo "Setting up Rofi"
 
-rm $HOME/.i3/lock
-ln -sfv ${PACKAGE_INSTALL}/resources/lock $HOME/.i3/lock
+mkdir -p $HOME/.config/rofi/
 
-rm $HOME/.i3/bin
-ln -sfv ${PACKAGE_INSTALL}/resources/bin $HOME/.i3/bin
-
-chmod 775 ${PACKAGE_INSTALL}/resources/lock/lock.sh
-
-mkdir -p $HOME/.config/i3status/
-
-ln -sfv ${PACKAGE_INSTALL}/config/i3status.config $HOME/.config/i3status/config
-
-
-# #############################
-#          rofi               #
-# #############################
-
-echo "Installing Rofi menu"
-
-cd /tmp/
-git clone https://github.com/DaveDavenport/rofi.git
-cd rofi
-
-autoreconf -i                                                                                                      mkdir build/
-cd build/
-../configure
-make
-sudo make install
-
-cd -
-
+ln -sfv ${PACKAGE_INSTALL}/config/rofi.config $HOME/.config/rofi/config
