@@ -6,3 +6,6 @@ nnoremap <leader>w <C-w>v<C-w>l
 "nnoremap <leader><tab> :Scratch
 
 nnoremap <leader><leader> :tabn <return>
+
+nnoremap <leader>v :vsplit <cr>
+nnoremap <leader>h :split <cr>

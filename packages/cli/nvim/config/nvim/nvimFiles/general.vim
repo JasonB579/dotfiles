@@ -13,7 +13,7 @@ set shiftwidth=4
 
 set softtabstop=4
 
-set modelines=0
+set modelines=1
 
 set encoding=utf-8
 
@@ -42,8 +42,6 @@ nnoremap <C-n> :call NumberToggle()<cr>
 
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
-au FocusLost * :wa
 
 "sets line numbers to dark grey so they don't blend in with actual text
 hi LineNr ctermfg=DarkGrey
