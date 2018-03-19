@@ -1,4 +1,6 @@
-# Serubin's DotFiles
+# JasonB's DotFiles
+
+Forked from Serubin's Dotfiles. The README below relates to that repo.
 
 The purpose of this dotfiles configuration is to create a lightweight and easy to understand configuration. This was largely created as a multi-platform alternative to OhMyZsh. Personally - I found OhMyZsh to be very overwhelming and more focused on using other's configuration than customizing things to be my own. Thus, I created a framework that allows for two things: Easy management of dotfiles and a simple configuration that anyone could fork and modify to their liking.
 
