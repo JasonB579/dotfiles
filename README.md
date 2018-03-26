@@ -12,7 +12,7 @@ Whether you use this as a resource for creating your own dotfiles or you use thi
 
 Installing is fairly straight forward, just clone the repo and place it anywhere and use the install script provided.
 ```bash
-git clone --recursive https://github.com/Serubin/dotfiles.git && cd dotfiles && ./install.sh
+git clone --recursive https://github.com/JasonB579/dotfiles.git && cd dotfiles && ./install.sh
 ```
 To update run ``` ./install.sh -u```
 To install without interactivity run ``` ./install.sh -i <package1,package2> ``` (Still in progress)
@@ -58,11 +58,10 @@ Settings in `~/.dotfiles.info`
 #### Vim
 * "Smart" features
 * Shortcuts
-* Line numbers
+* Line numbers (relative and standard)
 * Intelligent ignores
 * lightline
 * YouCompleteMe
-* NerdTree
 * Presistent undo
 * Various completion packages
 
