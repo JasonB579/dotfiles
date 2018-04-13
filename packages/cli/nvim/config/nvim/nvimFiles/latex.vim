@@ -4,7 +4,7 @@ let g:tex_flavor='latex'
 
 let g:vimtex_view_general_viewer = 'evince'
 
-"let g:vimtex_compiler_progname='nvr'
+let g:vimtex_compiler_progname='nvr'
 
 let g:vimtex_fold_enabled=1
 
@@ -21,3 +21,20 @@ augroup latex
     autocmd BufWinEnter *.tex :VimtexCompile
 augroup END
 
+"augroup MyVimtex
+"  au!
+"  autocmd User VimtexEventCompileStarted call vimtex#compiler#output()
+"augroup END
+
+"function! VimtexOutput()
+"  call vimtex#compiler#output()
+
+  " Move window to bottom
+"  wincmd J
+
+  " Set window height
+"  resize 10
+
+  " Return to LaTeX buffer
+"  wincmd w
+"endfunction

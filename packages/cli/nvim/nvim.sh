@@ -28,8 +28,8 @@ fi
 # config install
 
 mkdir -p ${HOME}/.config/nvim/
-ln -sfv "${PACKAGE_INSTALL}/config/nvim/vundle.vim" ~/.config/nvim/
 ln -sfv "${PACKAGE_INSTALL}/config/nvim/init.vim" ~/.config/nvim/
+ln -sfv "${PACKAGE_INSTALL}/config/nvim/colors" ~/.config/nvim/
 
 cp "${PACKAGE_INSTALL}/config/nvim/python.vim" ~/.config/nvim/
 
@@ -44,7 +44,7 @@ sed -i -e 's#%python-path%#'${python2_path}'#g' ~/.config/nvim/python.vim
 BUNDLE_DIR=${HOME}/.config/nvim/bundle
 
 # Install/update Vundle
-mkdir -p "${BUNDLE_DIR}" && (git clone https://github.com/VundleVim/Vundle.vim.git "${BUNDLE_DIR}/vundle" || (cd "${BUNDLE_DIR}/vundle" && git pull origin master))
+mkdir -p "${BUNDLE_DIR}" && (git clone https://github.com/VundleVim/Vundle.vim.git "${BUNDLE_DIR}/Vundle.vim" || (cd "${BUNDLE_DIR}/Vundle.vim" && git pull origin master))
 
 # Install bundles
 nvim +PluginInstall +qall
