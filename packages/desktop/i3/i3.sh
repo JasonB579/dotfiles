@@ -52,3 +52,11 @@ echo "Setting up Rofi"
 mkdir -p $HOME/.config/rofi/
 
 ln -sfv ${PACKAGE_INSTALL}/config/rofi.config $HOME/.config/rofi/config
+
+# ##############################
+#            Misc              #
+# ##############################
+
+echo "Setting up shell scripts for the config"
+
+ln -sfv ${PACKAGE_INSTALL}/scripts/bartermapp /usr/bin/bartermapp
