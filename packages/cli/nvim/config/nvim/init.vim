@@ -44,3 +44,4 @@ source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/searching.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/gitGutterrc.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/ycmrc.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/lightLinerc.vim
+source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/vhdl.vim
