@@ -16,7 +16,7 @@ terminal=termite
 if [ $2 = 0 ]; then
 	x=1400
 else
-	x=$(expr $xoffset + $xinterval \* $2 - $xinterval)
+	x=$(expr $xoffset + $xinterval - $xinterval)
 fi
 
 tdrop -ma -w $width -h $height -x $x -y $yoffset -n $2 -f "-e $1" $terminal
