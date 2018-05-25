@@ -9,3 +9,5 @@ nnoremap <leader><leader> :tabn <return>
 
 nnoremap <leader>v :vsplit <cr>
 nnoremap <leader>h :split <cr>
+
+nnoremap <leader>t :term <cr> i
