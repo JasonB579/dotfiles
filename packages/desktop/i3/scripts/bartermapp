@@ -13,7 +13,7 @@ yoffset=30
 width=500
 height=500
 terminal=termite
-if [ $2 = 0 ]; then
+if [ $2 = 0 ] || [$2 = 1 ]; then
 	x=1400
 else
 	x=$(expr $xoffset + $xinterval - $xinterval)
