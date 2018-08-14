@@ -5,7 +5,7 @@
 # @Serubin
 # MIT License
 ###
-echo "-------- Setting up Serubin's Dotfiles --------"
+echo "-------- Setting up JasonB579's Dotfiles --------"
 
 source ${HOME}/.dotfiles.info
 

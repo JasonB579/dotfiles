@@ -23,7 +23,7 @@ function pre_cmd() {
     local git=`git_stat`
     [[ "$git" != "" ]] && git=$git" "
 
-   prompt_format="  $BBlue$User$BWhite:$BCyan$PathShort$BWhite $git"
+   prompt_format="$BBlue$User$BWhite:$BCyan$PathShort$BWhite $git"
    [[ "$DOTFILES_SHELL" == "zsh" ]] && export PROMPT=$prompt_format
    [[ "$DOTFILES_SHELL" == "bash" ]] && export PS1=$prompt_format
 }
