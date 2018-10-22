@@ -1,3 +1,3 @@
 #! /bin/bash
 
-i3lock_improved -u ~/Pictures/doors_of_durin.png
+i3lock_improved -u ~/Pictures/lock_screen.png

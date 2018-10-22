@@ -12,7 +12,7 @@ xinterval=60
 yoffset=30
 width=500
 height=500
-terminal=termite
+terminal=urxvt
 if [ $2 = 0 ] || [$2 = 1 ]; then
 	x=1400
 else
