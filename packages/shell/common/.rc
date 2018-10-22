@@ -43,7 +43,6 @@ fi
 
 # Change syntax highlighting for glob to be bold
 typeset -A ZSH_HIGHLIGHT_STYLES
-
 ZSH_HIGHLIGHT_STYLES[globbing]='fg=blue,bold'
 
 alias resedit='vim ~/Documents/resume/jason_blocklove_resume.tex ~/Documents/resume/awesome-cv.cls ~/Documents/resume/resume/*.tex'
