@@ -1,8 +1,7 @@
 #!/bin/bash
 
 ########################################
-# Base install of vim
-# ViImproved
+# Base install of tmux
 ########################################
 
 echo "Backing up previous tmux config"
