@@ -10,12 +10,12 @@ else # otherwise assumes the following
 fi
 
 # Tmux as a shell
-if [[ "$TMUX_AS_SHELL" == "1" ]]; then
-# If not running interactively, do not do anything
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
-
-fi
+#if [[ "$TMUX_AS_SHELL" == "1" ]]; then
+## If not running interactively, do not do anything
+#[[ $- != *i* ]] && return
+#[[ -z "$TMUX" ]] && exec tmux
+#
+#fi
 
 source ${DOTFILES_DIR}/util/detectos.sh
 
@@ -40,6 +40,11 @@ fi
 # If not running interactively, do not do anything
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec tmux
+
+# Change syntax highlighting for glob to be bold
+typeset -A ZSH_HIGHLIGHT_STYLES
+
+ZSH_HIGHLIGHT_STYLES[globbing]='fg=blue,bold'
 
 alias resedit='vim ~/Documents/resume/jason_blocklove_resume.tex ~/Documents/resume/awesome-cv.cls ~/Documents/resume/resume/*.tex'
 alias caps='xmodmap ~/.xmodmap'
