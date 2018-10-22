@@ -10,19 +10,21 @@ snippet article "\documentclass{article}...template"
 
 \\title{${1}}
 \\author{${2}}
-\\date{${3}}
+\\date{`date +%b\ %d,%Y`}
 
 \\begin{document}
 \\begin{titlepage}
 \\maketitle
 \\end{titlepage}
-	${0}
+${0}
 \\end{document}
 endsnippet
 
 #KGCOE CMPE Template
 snippet CMPE "\CMPE Template"
 \\documentclass[CMPE]{KGCOEReport}
+
+\\setcounter {secnumdepth}{0}
 
 \\newcommand{\classCode}{CMPE ${1}}  % 4 char code with number
 \\newcommand{\name}{${2}}
@@ -40,10 +42,35 @@ snippet CMPE "\CMPE Template"
 
 \\begin{document}
 \\maketitle
-	${0}
-\\section*{Abstract}
-\\section*{Design Mathodology}
-\\section*{Results \& Analysis}
-\\section*{Conclusion}
+
+\\tableofcontents
+\\newpage
+${0}
+\\section{Abstract}
+\\section{Design Methodology}
+\\section{Results \& Analysis}
+\\section{Conclusion}
+\\section{Questions}
+\\end{document}
+endsnippet
+
+#Homework Format
+snippet Homework "\homework template"
+\\documentclass[11pt]{article}
+\\usepackage[margin=1in]{geometry}
+\\usepackage{fancyhdr}
+\\usepackage{float}
+\\usepackage{graphicx}
+\\usepackage{hyperref}
+\\usepackage[shortlabels]{enumitem}
+
+\\date{\today}
+
+\\begin{document}
+\\thispagestyle{fancy}
+\\fancyhead[L]{${1:Jason Blocklove}\\${2}}
+\\fancyhead[R]{${3:\today}}
+\\section*{Question 1}
+${0}
 \\end{document}
 endsnippet

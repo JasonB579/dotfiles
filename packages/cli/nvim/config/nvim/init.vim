@@ -25,6 +25,7 @@ Bundle 'scrooloose/syntastic'
 "Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'mtth/scratch.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'JPR75/VIP'
 Bundle 'itchyny/lightline.vim'
 
 " All of your Plugins must be added before the following line
@@ -33,7 +34,6 @@ filetype plugin indent on    " required
 
 "Sourcing for all of my other settings
 source ~/dotfiles/packages/cli/nvim/config/nvim/colors/colorrc.vim
-source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/latex.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/syntasticrc.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/sniprc.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/map.vim
@@ -44,4 +44,5 @@ source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/searching.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/gitGutterrc.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/ycmrc.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/lightLinerc.vim
-source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/vhdl.vim
+source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/latex.vim
+source ~/dotfiles/packages/cli/vhdl/config/vhdl.vim

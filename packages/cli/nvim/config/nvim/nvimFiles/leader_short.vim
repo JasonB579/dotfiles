@@ -11,4 +11,4 @@ nnoremap <leader>v :vsplit <cr>
 nnoremap <leader>h :split <cr>
 
 nnoremap <leader>t :term <cr> i
-nnoremap <leader>e :edit 
+nnoremap <leader>e :edit

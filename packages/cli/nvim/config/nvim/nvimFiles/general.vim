@@ -24,6 +24,18 @@ set hidden
 set autoread
 
 set scrolloff=8
+
+set undolevels=1000
+set udf
+
+"Undo stuff
+if has('persistent_undo')
+	silent !mkdir ~/.config/nvim/undo > /dev/null 2>&1
+	set undodir=~/.config/nvim/undo
+	set undofile
+endif
+
+
 "number setting toggle
 set number
 set relativenumber
