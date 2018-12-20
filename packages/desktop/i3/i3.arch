@@ -7,10 +7,17 @@
 
 echo "Installing I3 and dependencies"
 #Install i3
-sudo pacman -S --noconfirm i3 i3lock polybar perl pkgconf imagemagick
+sudo pacman -S --noconfirm i3 perl pkgconf imagemagick
+#Install polybar
+cd /tmp
+git clone https://aur.archlinux.org/polybar.git
+cd polybar
+makepkg -si
+cd -
+rm -rf /tmp/polybar
 
 echo "Installing xfce terminal & URxvt"
-sudo pacman -S --noconfirm --needed xfce4-terminal urxvt
+sudo pacman -S --noconfirm --needed xfce4-terminal rxvt-unicode
 
 echo "Installing Rofi"
 sudo pacman -S --noconfirm rofi
