@@ -12,13 +12,16 @@ nnoremap <leader>I <Plug>SpecialVHDLPasteInstance
 nnoremap <leader>E <Plug>SpecialVHDLPasteEntity
 
 " Simple shortcuts from https://github.com/salinasv/vim-vhdl/
-iabbrev <buffer> dt downto
-iabbrev <buffer> sig signal
-iabbrev <buffer> gen generate
-iabbrev <buffer> ot others
-iabbrev <buffer> sl std_logic
-iabbrev <buffer> slv std_logic_vector
-iabbrev <buffer> uns unsigned
-iabbrev <buffer> toi to_integer
-iabbrev <buffer> tos to_unsigned
-iabbrev <buffer> tou to_unsigned
+"augroup vhdl_abbrevs
+	"autocmd!
+	autocmd FileType vhdl iabbrev <buffer> dt downto
+	autocmd FileType vhdl iabbrev <buffer> sig signal
+	autocmd FileType vhdl iabbrev <buffer> gen generate
+	autocmd FileType vhdl iabbrev <buffer> ot others
+	autocmd FileType vhdl iabbrev <buffer> sl std_logic
+	autocmd FileType vhdl iabbrev <buffer> slv std_logic_vector
+	autocmd FileType vhdl iabbrev <buffer> uns unsigned
+	autocmd FileType vhdl iabbrev <buffer> toi to_integer
+	autocmd FileType vhdl iabbrev <buffer> tos to_unsigned
+	autocmd FileType vhdl iabbrev <buffer> tou to_unsigned
+"augroup END

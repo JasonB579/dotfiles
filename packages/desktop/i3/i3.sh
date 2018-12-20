@@ -33,6 +33,10 @@ mkdir -p $HOME/.config/i3
 
 ln -sfv ${PACKAGE_INSTALL}/config/i3.config ${HOME}/.config/i3/config
 
+mkdir -p $HOME/.config/polybar
+
+ln - sfv ${PACKAGE_INSTALL}/config/polybar.config
+
 # ##############################
 #         XFCE Terminal        #
 # ##############################
@@ -42,6 +46,14 @@ echo "Setting up xfce terminal"
 mkdir -p $HOME/.config/xfce4/terminal/
 
 ln -sfv ${PACKAGE_INSTALL}/config/terminalrc $HOME/.config/xfce4/terminal/
+
+# ##############################
+#             URxvt            #
+# ##############################
+
+echo "Setting up URxvt"
+
+ln -sfv ${PACKAGE_INSTALL}/config/Xdefaults $HOME/.Xdefaults
 
 # ##############################
 #            Rofi              #

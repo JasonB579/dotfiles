@@ -7,11 +7,12 @@
 
 echo "Installing I3 and dependencies"
 #Install i3
-sudo pacman -S --noconfirm i3 i3lock polybar perl pkg-config imagemagick
+sudo pacman -S --noconfirm i3 i3lock polybar perl pkgconf imagemagick
 
-echo "Installing xfce terminal"
-sudo pacman -S --noconfirm --needed xfce4-terminal
+echo "Installing xfce terminal & URxvt"
+sudo pacman -S --noconfirm --needed xfce4-terminal urxvt
 
 echo "Installing Rofi"
 sudo pacman -S --noconfirm rofi
 
+./compton_build.sh

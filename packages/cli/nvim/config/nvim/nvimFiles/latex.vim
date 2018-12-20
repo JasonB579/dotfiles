@@ -21,20 +21,20 @@ augroup latex
     autocmd BufWinEnter *.tex :VimtexCompile
 augroup END
 
-"augroup MyVimtex
-"  au!
-"  autocmd User VimtexEventCompileStarted call vimtex#compiler#output()
-"augroup END
+augroup MyVimtex
+  au!
+  autocmd User VimtexEventCompileStarted call vimtex#compiler#output()
+augroup END
 
-"function! VimtexOutput()
-"  call vimtex#compiler#output()
+function! VimtexOutput()
+  call vimtex#compiler#output()
 
-  " Move window to bottom
-"  wincmd J
+ " Move window to bottom
+  wincmd J
 
-  " Set window height
-"  resize 10
+ " Set window height
+  resize 10
 
-  " Return to LaTeX buffer
-"  wincmd w
-"endfunction
+ " Return to LaTeX buffer
+  wincmd w
+endfunction

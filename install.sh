@@ -1,8 +1,7 @@
 #!/bin/bash
 
 ###
-# Installer for Serubin's Dotfiles
-# @Serubin
+# Installer for JasonB579's Dotfiles
 # MIT License
 ###
 echo "-------- Setting up JasonB579's Dotfiles --------"
@@ -127,10 +126,13 @@ if [[ ${flag_update} != "1" ]]; then # if update, don't prompt
     registerPackage "cli" "tmux"
     registerPackage "cli" "htop"
 	registerPackage "cli" "vhdl"
+	registerPackage "cli" "ranger"
+	registerPackage "cli" "calcurse"
 
     # Prompt for desktop
     if [[ `getInputBoolean "Would you like to install desktop packages?"` == "1" ]]; then
         registerPackage "desktop" "latex"
+		registerPackage "desktop" "i3"
     fi
 
     # dotfiles.info replacement
