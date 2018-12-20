@@ -7,7 +7,7 @@
 
 echo "Installing I3 and dependencies"
 #Install i3
-sudo pacman -S --noconfirm i3 perl pkgconf imagemagick
+sudo pacman -S --noconfirm i3 perl pkgconf imagemagick ttf-font-awesome
 #Install polybar
 cd /tmp
 git clone https://aur.archlinux.org/polybar.git

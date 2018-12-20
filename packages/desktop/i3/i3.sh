@@ -24,8 +24,8 @@ cd /tmp
 git clone https://www.github.com/JasonB579/i3lock_improved
 cd i3lock_improved
 
-cp i3lock_improved /usr/bin/i3lock_improved
-cp i3lock_improved /usr/local/bin/i3lock_improved
+sudo cp i3lock_improved /usr/bin/i3lock_improved
+sudo cp i3lock_improved /usr/local/bin/i3lock_improved
 
 cd -
 rm -rf /tmp/i3lock_improved
@@ -37,7 +37,7 @@ ln -sfv ${PACKAGE_INSTALL}/config/i3.config ${HOME}/.config/i3/config
 
 mkdir -p $HOME/.config/polybar
 
-ln - sfv ${PACKAGE_INSTALL}/config/polybar.config
+ln -sfv ${PACKAGE_INSTALL}/config/polybar.config ${HOME}/.config/polybar/config
 
 # ##############################
 #         XFCE Terminal        #
@@ -73,4 +73,4 @@ ln -sfv ${PACKAGE_INSTALL}/config/rofi.config $HOME/.config/rofi/config
 
 echo "Setting up shell scripts for the config"
 
-ln -sfv ${PACKAGE_INSTALL}/scripts/bartermapp /usr/bin/bartermapp
+sudo ln -sfv ${PACKAGE_INSTALL}/scripts/bartermapp /usr/bin/bartermapp
