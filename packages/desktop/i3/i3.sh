@@ -13,9 +13,6 @@
 # ##############################
 #              i3              #
 # ##############################
-sudo echo "Re-Sudo Up"
-
-
 echo "Installing I3"
 
 cd /tmp
@@ -38,6 +35,7 @@ ln -sfv ${PACKAGE_INSTALL}/config/i3.config ${HOME}/.config/i3/config
 mkdir -p $HOME/.config/polybar
 
 ln -sfv ${PACKAGE_INSTALL}/config/polybar.config ${HOME}/.config/polybar/config
+ln -sfv ${PACKAGE_INSTALL}/config/polybar_launch.sh ${HOME}/.config/polybar/launch.sh
 
 # ##############################
 #         XFCE Terminal        #

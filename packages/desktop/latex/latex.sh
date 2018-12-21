@@ -7,9 +7,7 @@
 
 
 mkdir -p ${HOME}/.config/nvim/ftplugin
-mkdir -p ${HOME}/.config/zathura/
 ln -sfv "${PACKAGE_INSTALL}/config/.latexmkrc" ${HOME}
-#ln -sfv "${PACKAGE_INSTALL}/config/zathurarc" ${HOME}/.config/zathura/
 ln -sfv "${PACKAGE_INSTALL}/config/latex.vim" ${HOME}/.config/nvim/ftplugin/tex.vim
 
 # Vimtex needs --remote in vim, so this puts it back for neovim
