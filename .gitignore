@@ -3,3 +3,6 @@ runcom/.dir_colors
 .DS_Store
 .*.swp
 .*.swo
+*.pid
+*.log
+*pycache*
