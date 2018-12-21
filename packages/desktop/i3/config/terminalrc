@@ -1,8 +1,8 @@
 [Configuration]
-FontName=Noto Sans Mono 9
+FontName=Monospace 10
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
-MiscBellUrgent=FALSE
+MiscBellUrgent=TRUE
 MiscBordersDefault=TRUE
 MiscCursorBlinks=FALSE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
@@ -15,16 +15,17 @@ MiscToolbarDefault=FALSE
 MiscConfirmClose=TRUE
 MiscCycleTabs=TRUE
 MiscTabCloseButtons=TRUE
-MiscTabCloseMiddleClick=TRUE
+MiscTabCloseMiddleClick=FALSE
 MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 MiscMiddleClickOpensUri=FALSE
-MiscCopyOnSelect=FALSE
+MiscCopyOnSelect=TRUE
 MiscRewrapOnResize=TRUE
 MiscUseShiftArrowsToScroll=FALSE
 MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
-BackgroundDarkness=0.700000
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
+MiscShowRelaunchDialog=TRUE
+BackgroundDarkness=0.650000
 

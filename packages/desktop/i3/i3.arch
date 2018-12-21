@@ -7,7 +7,7 @@
 
 echo "Installing I3 and dependencies"
 #Install i3
-sudo pacman -S --noconfirm i3 perl pkgconf imagemagick ttf-font-awesome
+sudo pacman -S --noconfirm i3 perl pkgconf imagemagick ttf-font-awesome ttf-liberation noto-fonts cantarell-fonts feh
 #Install polybar
 cd /tmp
 git clone https://aur.archlinux.org/polybar.git
@@ -22,4 +22,4 @@ sudo pacman -S --noconfirm --needed xfce4-terminal rxvt-unicode
 echo "Installing Rofi"
 sudo pacman -S --noconfirm rofi
 
-./compton_build.sh
+sudo ${PACKAGE_INSTALL}/compton_build.sh
