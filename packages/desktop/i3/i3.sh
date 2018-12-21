@@ -68,6 +68,14 @@ mkdir -p $HOME/.config/rofi/
 ln -sfv ${PACKAGE_INSTALL}/config/rofi.config $HOME/.config/rofi/config
 
 # ##############################
+#             Compton          #
+# ##############################
+
+echo "Setting up Compton"
+
+ln -sfv ${PACKAGE_INSTALL}/config/compton.conf $HOME/.config/compton.conf
+
+# ##############################
 #            Misc              #
 # ##############################
 
