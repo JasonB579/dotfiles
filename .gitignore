@@ -5,4 +5,4 @@ runcom/.dir_colors
 .*.swo
 *.pid
 *.log
-*pycache*
+*.pyc
