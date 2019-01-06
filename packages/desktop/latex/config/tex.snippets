@@ -1,0 +1,77 @@
+# LaTeX Snippets for creating basic file templates
+
+#article
+snippet article "\documentclass{article}...template"
+\\documentclass[11pt]{article}
+\\usepackage[margin=1in]{geometry}
+\\usepackage{float}
+\\usepackage{graphicx}
+\\usepackage{hyperref}
+\\usepackage[shortlabels]{enumitem}
+
+\\title{${1}}
+\\author{${2}}
+\\date{`date +%b\ %d,%Y`}
+
+\\begin{document}
+\\begin{titlepage}
+\\maketitle
+\\end{titlepage}
+${0}
+\\end{document}
+endsnippet
+
+#KGCOE CMPE Template
+snippet CMPE "\CMPE Template"
+\\documentclass[CMPE]{KGCOEReport}
+
+\\setcounter {secnumdepth}{0}
+
+\\newcommand{\classCode}{CMPE ${1}}  % 4 char code with number
+\\newcommand{\name}{${2}}
+\\newcommand{\LabSectionNum}{Section ${3}}
+\\newcommand{\LabInstructor}{${4}}	% The slash is to tell LaTeX that the period is between words
+												% not sentences so it spaces correctly. It won't appear in the
+												% final pdf
+\\newcommand{\TAs}{${5}}
+\\newcommand{\LectureSectionNum}{Section ${6}}
+\\newcommand{\LectureInstructor}{${7}}
+\\newcommand{\exerciseNumber}{${8}}
+\\newcommand{\exerciseDescription}{${9}}
+\\newcommand{\dateDone}{${10}}
+\\newcommand{\dateSubmitted}{${11}}
+
+\\begin{document}
+\\maketitle
+
+\\tableofcontents
+\\newpage
+${0}
+\\section{Abstract}
+\\section{Design Methodology}
+\\section{Results \& Analysis}
+\\section{Conclusion}
+\\section{Questions}
+\\end{document}
+endsnippet
+
+#Homework Format
+snippet Homework "\homework template"
+\\documentclass[11pt]{article}
+\\usepackage[margin=1in]{geometry}
+\\usepackage{fancyhdr}
+\\usepackage{float}
+\\usepackage{graphicx}
+\\usepackage{hyperref}
+\\usepackage[shortlabels]{enumitem}
+
+\\date{\today}
+
+\\begin{document}
+\\thispagestyle{fancy}
+\\fancyhead[L]{${1:Jason Blocklove}\\${2}}
+\\fancyhead[R]{${3:\today}}
+\\section*{Question 1}
+${0}
+\\end{document}
+endsnippet

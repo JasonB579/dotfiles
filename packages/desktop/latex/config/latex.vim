@@ -16,6 +16,7 @@ let g:vimtex_fold_manual = '1'
 let g:vimtex_toc_fold=1
 let g:vimtex_compiler_progname = 'nvr'
 let g:vimtex_view_general_viewer = 'zathura'
+
 " Testing Tex stuff (not really sure what it does yet)
 if !exists('g:ycm_semantic_triggers')
   let g:ycm_semantic_triggers = {}
@@ -23,11 +24,6 @@ endif
 let g:ycm_semantic_triggers.tex = [
       \ 're!\\[A-Za-z]*(ref|cite)[A-Za-z]*([^]]*])?{([^}]*, ?)*'
         \ ]
-
-augroup MyVimtex
-  au!
-  autocmd User VimtexEventCompileStarted call vimtex#compiler#output()
-augroup END
 
 function! VimtexOutput()
   call vimtex#compiler#output()

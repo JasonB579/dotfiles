@@ -9,6 +9,8 @@
 mkdir -p ${HOME}/.config/nvim/ftplugin
 ln -sfv "${PACKAGE_INSTALL}/config/.latexmkrc" ${HOME}
 ln -sfv "${PACKAGE_INSTALL}/config/latex.vim" ${HOME}/.config/nvim/ftplugin/tex.vim
+ln -sfv "${PACKAGE_INSTALL}/config/zathurarc" ${HOME}/.config/zathura/
+ln -sfv "${PACKAGE_INSTALL}/config/tex.snippets" ${HOME}/.config/nvim/UltiSnips/tex.snippets
 
 # Vimtex needs --remote in vim, so this puts it back for neovim
 pip install --user neovim-remote

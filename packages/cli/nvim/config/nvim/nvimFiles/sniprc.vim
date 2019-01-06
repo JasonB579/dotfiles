@@ -2,5 +2,6 @@
 let g:UltiSnipsExpandTrigger = "<C-j>"
 let g:UltiSnipsJumpForwardTrigger = "<C-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
-set runtimepath+=~/.config/nvim/
-"set runtimepath+=~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+set runtimepath+=$HOME/.config/nvim/
+"set runtimepath+=$HOME/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/
