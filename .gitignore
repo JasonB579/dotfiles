@@ -6,3 +6,6 @@ runcom/.dir_colors
 *.pid
 *.log
 *.pyc
+*.pid
+apts
+todo
