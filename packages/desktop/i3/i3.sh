@@ -15,8 +15,6 @@
 ###############################
 echo "Installing I3"
 
-cd /tmp
-
 mkdir -p $HOME/.config/i3
 
 ln -sfv ${PACKAGE_INSTALL}/config/i3.config ${HOME}/.config/i3/config

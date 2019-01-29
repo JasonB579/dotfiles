@@ -2,17 +2,15 @@
 
 URxvt*termName: rxvt-256color
 URxvt*saveLines: 12000
-! #URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=13:antialias=true:hinting=true
-! #URxvt*boldFont: xft:Bitstream Vera Sans Mono:bold:pixelsize=13:antialias=true:hinting=true
 ! #URxvt*font: xft:DejaVu Sans Mono Nerd Font:pixelsize=12:antialias=true:hinting=true
 ! #URxvt*boldFont: xft:DejaVu Sans Mono Nerd Font:bold:pixelsize=12:antialias=true:hinting=true
 URxvt*font: xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true
 URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=13:antialias=true:hinting=true
-! #URxvt*font: xft:terminus:pixelsize=15
-! #URxvt*boldFont: xft:terminus:bold:pixelsize=15
-! #URxvt*font:-*-courier-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
-! #URxvt*boldFont:-*-courier-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
 URxvt*scrollBar: false
+
+URxvt.perl-ext-common:	default,matcher
+URxvt.url-launcher:		firefox
+URxvt.matcher.button:	1
 
 ! special
 *.foreground:   #ffffff
@@ -51,4 +49,7 @@ URxvt*scrollBar: false
 *.color7:       #c8cacc
 *.color15:      #edeff2
 
-
+# Copy-paste. Stolen from: https://geleijn.nl/2014/copy-paste-using-ctrlshiftv-urxvt
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: False
+URxvt.perl-ext-common: default,clipboard
