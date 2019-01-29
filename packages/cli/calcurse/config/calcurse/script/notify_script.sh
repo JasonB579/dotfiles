@@ -1,10 +1,12 @@
 #!/bin/bash
 
-notify-send --icon=gtk-info Calcurse "$(calcurse -n)"
+notify-send --icon=appointment-soon-symbolic Calcurse "$(calcurse -n)"
 
-nextAppt="$(calcurse -n)"
-apptSchedule="$(calcurse -a)"
 
-message="$nextAppt\n\n\n$apptSchedule"
-
+# UNCOMMENT FOR EMAILS
+#nextAppt="$(calcurse -n)"
+#apptSchedule="$(calcurse -a)"
+#
+#message="$nextAppt\n\n\n$apptSchedule"
+#
 #echo -e "$message" | mail -s "[Calcurse] Upcoming Appt." jason.blocklove@gmail.com

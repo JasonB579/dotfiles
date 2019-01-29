@@ -1,4 +1,5 @@
 import sys, os, datetime
+from os.path import expanduser
 
 def diff_old(current_local, current_remote, file_type):
     """Diffs current lists for merge with old versions. If anything was deleted it ensures that the deleted item is not in the final list
@@ -8,7 +9,8 @@ def diff_old(current_local, current_remote, file_type):
     :returns: TODO
 
     """
-    with open ('old_versions/' + file_type) as f:
+    home = expanduser("~")
+    with open (home + '/.calcurse/script/old_versions/' + file_type) as f:
         old_version = f.readlines()
 
     for val in old_version:
@@ -59,36 +61,37 @@ def merge_apts(file_1, file_2):
 
 
 def main():
+    calcurse_dir = expanduser("~/.calcurse/")
     if len(sys.argv) != 2:
         print ("Usage: calcurse_merge.py <server>")
         sys.exit(1)
     else:
         server = sys.argv[1]
 
-    os.system('mkdir -p tmp && cd tmp && scp ' + server + ':"~/.calcurse/apts ~/.calcurse/todo" .')
+    os.system('mkdir -p ' + calcurse_dir + 'script/tmp && cd ' + calcurse_dir + 'script/tmp && scp ' + server + ':"~/.calcurse/apts ~/.calcurse/todo" .')
 
-    with open('tmp/apts') as f:
+    with open(calcurse_dir + 'script/tmp/apts') as f:
         remote_apts = f.readlines()
-    with open('tmp/todo') as f:
+    with open(calcurse_dir + 'script/tmp/todo') as f:
         remote_todo = f.readlines()
-    with open('/home/jason/.calcurse/apts') as f:
+    with open(calcurse_dir + 'apts') as f:
         local_apts = f.readlines()
-    with open('/home/jason/.calcurse/todo') as f:
+    with open(calcurse_dir + 'todo') as f:
         local_todo = f.readlines()
 
     todo_list = merge_todo(local_todo, remote_todo)
     apts_list = merge_apts(local_apts, remote_apts)
 
-    with open('tmp/apts', 'w') as f:
+    with open(calcurse_dir + 'script/tmp/apts', 'w') as f:
         for item in apts_list:
             f.write(item)
 
-    with open('tmp/todo', 'w') as f:
+    with open(calcurse_dir + 'script/tmp/todo', 'w') as f:
         for item in todo_list:
             f.write(item)
 
 
-    os.system('cd tmp && cp apts todo ../old_versions && scp apts todo ' + server + ':~/.calcurse && cp apts todo ~/.calcurse && cd .. && rm -rf tmp')
+    os.system('cd ' + calcurse_dir + 'script/tmp && cp apts todo ' + calcurse_dir + 'script/old_versions && scp apts todo ' + server + ':~/.calcurse && cp apts todo ~/.calcurse && cd .. && rm -rf tmp')
 
 
 if __name__ == "__main__":
