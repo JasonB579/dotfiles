@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Run merge script
+python3 ~/.calcurse/script/calcurse_merge.py valinor &
