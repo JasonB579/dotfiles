@@ -7,5 +7,5 @@ runcom/.dir_colors
 *.log
 *.pyc
 *.pid
-apts
-todo
+apts*
+todo*
