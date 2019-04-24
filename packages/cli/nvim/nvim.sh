@@ -38,7 +38,7 @@ if [ "$DISTRO" == "Arch" ]; then # work around for arch, because smart python li
 else
     python2_path=`which python3`
 fi
-sed -i -e 's#%python-path%#'${python2_path}'#g' ${PACKAGE_INSTALL}/config/nvim/python.vim
+sed -i -e 's#%python-path%#'${python2_path}'#g' ${PACKAGE_INSTALL}/config/nvim/nvimFiles/python.vim
 
 
 BUNDLE_DIR=${HOME}/.config/nvim/bundle
