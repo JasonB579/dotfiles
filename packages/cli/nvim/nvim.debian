@@ -8,13 +8,13 @@
 # vim install
 sudo apt-get -y install build-essential libtool libtool-bin autoconf automake cmake g++ pkg-config unzip python-dev python3-dev xsel 
 
-curl https://bootstrap.pypa.io/get-pip.py | sudo python
+#curl https://bootstrap.pypa.io/get-pip.py | sudo python
 
-sudo pip uninstall -y neovim
+sudo pip3 uninstall -y neovim
 
 source $PACKAGE_INSTALL/nvim.build.sh
 
-yes | sudo pip install neovim
+yes | sudo pip3 install neovim
 
 sudo update-alternatives --install /usr/bin/vi vi `which nvim` 60
 sudo update-alternatives --config vi
