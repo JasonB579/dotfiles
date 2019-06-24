@@ -68,7 +68,9 @@ def main():
     else:
         server = sys.argv[1]
 
-    os.system('mkdir -p ' + calcurse_dir + 'script/tmp && cd ' + calcurse_dir + 'script/tmp && scp ' + server + ':"~/.calcurse/apts ~/.calcurse/todo" .')
+    os.system('mkdir -p ' + calcurse_dir + 'script/tmp')
+    os.system('cd ' + calcurse_dir + 'script/tmp && scp ' + server + ':~/.calcurse/apts ~/.calcurse/todo .')
+    #os.system('scp ' + server + ':~/.calcurse/apts ~/.calcurse/todo .')
 
     with open(calcurse_dir + 'script/tmp/apts') as f:
         remote_apts = f.readlines()
