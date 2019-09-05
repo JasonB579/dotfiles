@@ -10,11 +10,8 @@ source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/syntasticrc.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/sniprc.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/map.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/general.vim
-source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/autocomp.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/leader_short.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/searching.vim
-source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/gitGutterrc.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/ycmrc.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/lightLinerc.vim
-source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/python.vim
 source ~/dotfiles/packages/cli/nvim/config/nvim/nvimFiles/filetype.vim
