@@ -1,4 +1,4 @@
-# JasonB's DotFiles
+# JBlocklove's DotFiles
 
 Forked from Serubin's Dotfiles. The README below relates to that repo.
 
@@ -12,7 +12,7 @@ Whether you use this as a resource for creating your own dotfiles or you use thi
 
 Installing is fairly straight forward, just clone the repo and place it anywhere and use the install script provided.
 ```bash
-git clone --recursive https://github.com/JasonB579/dotfiles.git && cd dotfiles && ./install.sh
+git clone --recursive https://github.com/JBlocklove/dotfiles.git && cd dotfiles && ./install.sh
 ```
 To update run ``` ./install.sh -u```
 To install without interactivity run ``` ./install.sh -i <package1,package2> ``` (Still in progress)
