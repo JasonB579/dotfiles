@@ -8,6 +8,9 @@ snippet article "\documentclass{article}...template"
 \\usepackage{graphicx}
 \\usepackage{hyperref}
 \\usepackage[shortlabels]{enumitem}
+\\usepackage{parskip}
+
+\\setcounter{secnumdepth}{0}
 
 \\title{${1}}
 \\author{${2}}
@@ -65,8 +68,10 @@ snippet homework "\homework template"
 \\usepackage{float}
 \\usepackage{graphicx}
 \\usepackage{hyperref}
+\\usepackage{parskip}
 \\usepackage[shortlabels]{enumitem}
 
+\\setlength{\headheight}{14pt}
 \\setcounter{secnumdepth}{0}
 
 \\date{\today}
@@ -166,7 +171,7 @@ snippet frame "\basic frame setup"
 endsnippet
 
 snippet note "\frame note setup"
-\\note{$1
+\\note{
 	\\begin{itemize}
 		\\item $0
 \\end{itemize}
