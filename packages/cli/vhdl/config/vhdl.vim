@@ -7,9 +7,16 @@ let g:vhdl_indent_genportmap = 0 " Keeps Vim from indenting port maps too much
 let g:HDL_Clock_Period = 10
 let g:HDL_Author = system("git config --global user.name")
 
+let g:sigPrefix_VIP = ""
+
 nnoremap <leader>C <Plug>SpecialVHDLPasteComponent
 nnoremap <leader>I <Plug>SpecialVHDLPasteInstance
 nnoremap <leader>E <Plug>SpecialVHDLPasteEntity
+
+nmap <leader><leader>c :Vic<CR>
+nmap <leader><leader>i :Vii<CR>
+nmap <leader><leader>e :Vie<CR>
+nmap <leader><leader>y :Viy<CR>
 
 " Simple shortcuts from https://github.com/salinasv/vim-vhdl/
 iabbrev <buffer> dt downto

@@ -1,5 +1,7 @@
 # Shamelessly stolen from
 # https://github.com/zivv/UltiSnips/blob/master/vhdl.snippets
+
+#Updated by Jason Blocklove
 global !p
 def split_line(text):
 	import textwrap
@@ -40,6 +42,10 @@ snippet uun "use IEEE.STD_LOGIC_UNSIGNED.ALL;"
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 endsnippet
 
+snippet num "use IEEE.NUMERIC_STD.ALL;"
+use IEEE.NUMERIC_STD.ALL;
+endsnippet
+
 snippet ent "entity ... ; | architecture ...;"
 entity ${1:} is
 	port(
@@ -50,6 +56,17 @@ begin
 end $2;
 endsnippet
 
+snippet genent "entity ... ; | architecture ...;"
+entity ${1:} is
+	generic(
+	);
+	port(
+	);
+end $1;
+architecture ${2:Behavioral} of $1 is
+begin
+end $2;
+endsnippet
 snippet l "std_logic"
 std_logic
 endsnippet
@@ -103,4 +120,27 @@ endsnippet
 
 snippet sig "signal"
 signal
+endsnippet
+
+snippet clpro "clk_proc : process ..."
+${1}:process
+begin
+	clk <= '1';
+	wait for ${2:50 ns};
+	clk <= '0';
+	wait for $2;
+end process;
+${0}
+endsnippet
+
+snippet assert "assert ... report ... severity ...;"
+assert ${1:condition}
+	report ${2:"string"}
+	severity ${3:error};
+endsnippet
+
+snippet end "assert false severity failure;"
+assert false
+	report "Testbench Concluded"
+	severity failure;
 endsnippet
