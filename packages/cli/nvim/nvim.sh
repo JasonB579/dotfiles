@@ -28,9 +28,10 @@ fi
 # config install
 
 mkdir -p ${HOME}/.config/nvim/
-ln -sfv "${PACKAGE_INSTALL}/config/nvim/init.vim" ~/.config/nvim/
-ln -sfv "${PACKAGE_INSTALL}/config/nvim/colors" ~/.config/nvim/
-ln -sfv "${PACKAGE_INSTALL}/config/nvim/nvimFiles/vundle.vim" ~/.config/nvim
+ln -sfv "${PACKAGE_INSTALL}/config/init.vim" ~/.config/nvim/
+ln -sfv "${PACKAGE_INSTALL}/config/colors" ~/.config/nvim/
+ln -sfv "${PACKAGE_INSTALL}/config/plug.vim" ~/.config/nvim
+ln -sfv "${PACKAGE_INSTALL}/config/configs" ~/.config/nvim
 
 
 if [ "$DISTRO" == "Arch" ]; then # work around for arch, because smart python linking.
@@ -41,17 +42,17 @@ fi
 sed -i -e 's#%python-path%#'${python2_path}'#g' ${PACKAGE_INSTALL}/config/nvim/nvimFiles/python.vim
 
 
-BUNDLE_DIR=${HOME}/.config/nvim/bundle
+PLUGGED_DIR=${HOME}/.config/nvim/plugged
 
-# Install/update Vundle
-mkdir -p "${BUNDLE_DIR}" && (git clone https://github.com/VundleVim/Vundle.vim.git "${BUNDLE_DIR}/vundle" || (cd "${BUNDLE_DIR}/vundle" && git pull origin master))
+# Install/update vim-plug
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install bundles
-nvim +PluginInstall +qall
+nvim +PlugInstall +qall
 
 echo "Compiling ycm"
 # Compile YouCompleteMe
-cd "${BUNDLE_DIR}/YouCompleteMe"
+cd "${PLUGGED_DIR}/YouCompleteMe"
 
 if [ "$DISTRO" == "Arch" ]; then # work around for arch, because smart python linking.
     /usr/bin/env python2 install.py --clang-completer --system-libclang
@@ -62,4 +63,4 @@ fi
 cd -
 
 # Removing variables
-unset BUNDLE_DIR
+unset PLUGGED_DIR

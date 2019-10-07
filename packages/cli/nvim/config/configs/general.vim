@@ -35,7 +35,6 @@ if has('persistent_undo')
 	set undofile
 endif
 
-
 "number setting toggle
 set number
 set relativenumber

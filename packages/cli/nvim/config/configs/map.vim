@@ -24,3 +24,12 @@ nnoremap <C-l> <C-w>l
 
 nnoremap <Tab> :n<cr><cr>
 nnoremap <S-Tab> :N<cr><cr>
+
+"""""""""""""""""LEADER MAPPING"""""""""""""""""""""
+"Various remaps which use the <leader> key
+nnoremap <leader>0 :StripWhitespace <return>
+
+nnoremap <leader>w <C-w>v<C-w>l
+
+nnoremap <leader>v :vsplit <cr>
+nnoremap <leader>h :split <cr>
