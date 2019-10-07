@@ -10,6 +10,7 @@ endif
 
 source ~/.config/nvim/colors/colorrc.vim
 "source ~/.config/nvim/configs/syntasticrc.vim
+source ~/.config/nvim/configs/ale.vim
 source ~/.config/nvim/configs/sniprc.vim
 source ~/.config/nvim/configs/map.vim
 source ~/.config/nvim/configs/general.vim

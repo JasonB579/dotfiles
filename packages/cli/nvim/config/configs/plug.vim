@@ -11,8 +11,9 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Completer for vim
 Plug 'Valloric/YouCompleteMe'
-" Syntax checker
-Plug 'scrooloose/syntastic'
+" Syntax checker - currently testing ALE
+"Plug 'scrooloose/syntastic'
+Plug 'dense-analysis/ale'
 " Pretty statusline
 Plug 'itchyny/lightline.vim'
 " Fuzzy finder - added to work with papis
