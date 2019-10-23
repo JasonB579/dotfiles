@@ -1,5 +1,0 @@
-flameshot
-palemoon/firefox
-eidolon & lutris
-zork - from server
-neovim remote

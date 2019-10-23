@@ -9,3 +9,6 @@ autocmd BufRead,BufNewFile *.cls setlocal filetype=tex
 
 " constraint files
 autocmd BufRead,BufNewFile *.xdc setlocal filetype=xdc
+
+" ms files are now groff filetype
+autocmd BufRead,BufNewFile *.ms setlocal filetype=groff

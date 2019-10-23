@@ -1,4 +1,3 @@
-
 # Skip if non-interactive
 [[ $- != *i* ]] && return
 
@@ -6,16 +5,8 @@
 if [ -r "${HOME}/.dotfiles.info" ]; then # checks for stored location
 	source "${HOME}/.dotfiles.info"
 else # otherwise assumes the following
-	DOTFILES_DIR="${HOME}/.dotfiles"
+	DOTFILES_DIR="${HOME}/dotfiles"
 fi
-
-# Tmux as a shell
-#if [[ "$TMUX_AS_SHELL" == "1" ]]; then
-## If not running interactively, do not do anything
-#[[ $- != *i* ]] && return
-#[[ -z "$TMUX" ]] && exec tmux
-#
-#fi
 
 source ${DOTFILES_DIR}/util/detectos.sh
 
@@ -37,12 +28,6 @@ fi
 if [ -r ~/.dir_colors ]; then
     eval $(dircolors ~/.dir_colors);
 fi
-# If not running interactively, do not do anything
-[[ $- != *i* ]] && return
-[[ -z "$TMUX" ]] && exec tmux
-
-# Change syntax highlighting for glob to be bold
-typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[globbing]='fg=blue,bold'
 
 source ~/.localrc
+source ~/.shellrc/*

@@ -4,5 +4,5 @@
 # Arch install for neomutt
 ############################
 
-sudo pacman -S --noconfirm --needed neomutt dialog offlineimap msmtp
+sudo pacman -S --noconfirm --needed neomutt isync msmtp pass
 

@@ -7,7 +7,15 @@
 
 echo "Installing I3 and dependencies"
 #Install i3
-sudo pacman -S --noconfirm i3 perl pkgconf imagemagick ttf-font-awesome ttf-liberation noto-fonts cantarell-fonts feh
+sudo pacman -S --noconfirm i3 perl pkgconf imagemagick ttf-liberation noto-fonts cantarell-fonts feh python-pywal qutebrowser dunst
+#Install NerdFonts
+cd /tmp
+git clone https://aur.archlinux.org/nerd-fonts-complete.git
+cd nerd-fonts-complete
+makepkg -si
+cd -
+rm -rf /tmp/nerd-fonts-complete
+
 #Install polybar
 cd /tmp
 git clone https://aur.archlinux.org/polybar.git
@@ -16,8 +24,8 @@ makepkg -si
 cd -
 rm -rf /tmp/polybar
 
-echo "Installing xfce terminal & URxvt"
-sudo pacman -S --noconfirm --needed xfce4-terminal rxvt-unicode
+echo "Installing URxvt"
+sudo pacman -S --noconfirm --needed rxvt-unicode
 
 echo "Installing Rofi"
 sudo pacman -S --noconfirm rofi

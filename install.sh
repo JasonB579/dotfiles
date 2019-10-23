@@ -1,10 +1,10 @@
 #!/bin/bash
 
 ###
-# Installer for JasonB579's Dotfiles
+# Installer for JBlocklove's Dotfiles
 # MIT License
 ###
-echo "-------- Setting up JasonB579's Dotfiles --------"
+echo "-------- Setting up JBlocklove's Dotfiles --------"
 
 source ${HOME}/.dotfiles.info
 
@@ -111,8 +111,6 @@ if [[ ${DISTRO} == "Arch" ]]; then
 	fi
 fi
 
-ln -sfv "${DOTFILES_DIR}/common/dircolors-solarized/dircolors.256dark" ~/.dir_colors
-
 # package installations
 if [[ ${flag_update} != "1" ]]; then # if update, don't prompt
     registerPackage "cli" "required" # required packages
@@ -128,6 +126,7 @@ if [[ ${flag_update} != "1" ]]; then # if update, don't prompt
 	registerPackage "cli" "vhdl"
 	registerPackage "cli" "ranger"
 	registerPackage "cli" "calcurse"
+	registerPackage "cli" "neomutt"
 
     # Prompt for desktop
     if [[ `getInputBoolean "Would you like to install desktop packages?"` == "1" ]]; then

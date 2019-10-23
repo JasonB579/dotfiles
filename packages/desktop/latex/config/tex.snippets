@@ -69,6 +69,7 @@ snippet homework "\homework template"
 \\usepackage{graphicx}
 \\usepackage{hyperref}
 \\usepackage{parskip}
+\\usepackage{amsmath}
 \\usepackage[shortlabels]{enumitem}
 
 \\setlength{\headheight}{14pt}
@@ -119,6 +120,9 @@ snippet beamer "\beamer base template"
     ]
     \\end{frame}
 \}
+
+% Fixes how references look
+\\setbeamertemplate{bibliography item}{\insertbiblabel}
 
 \\usetheme[height=10mm]{Rochester}
 \\usecolortheme{dove}
@@ -176,4 +180,16 @@ snippet note "\frame note setup"
 		\\item $0
 \\end{itemize}
 }
+endsnippet
+
+snippet align "\begin{align}..."
+\\begin{align${1:*}}
+	$0
+\\end{align$1}
+endsnippet
+
+snippet bib "\bibliographystyle{IEEETrans}..."
+\\bibliographystyle{${1:IEEEtran}}
+\\bibliography{$2}
+$0
 endsnippet

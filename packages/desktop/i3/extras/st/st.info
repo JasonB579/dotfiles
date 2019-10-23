@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#
+# st Info file
+#
+
+export package_support="Arch"
+
+echo "st Terminal Install"
+
+PRE_INSTALL_OPTIONS() {
+    echo ""
+}
+
+

@@ -11,8 +11,8 @@ status_connected = nord_status_list[0].split(': ')[1]
 if status_connected == "Connected":
     status_country = nord_status_list[2].split(': ')[1]
     status_city = nord_status_list[3].split(': ')[1]
-    print(" | " + status_country + " - " + status_city)
+    print(" | " + status_country + " - " + status_city)
     pass
 else:
-    print(" | Not Connected")
+    print(" | Not Connected")
     pass

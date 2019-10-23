@@ -8,9 +8,9 @@ Plug 'unblevable/quick-scope'
 " Snippet engine
 Plug 'SirVer/ultisnips'
 " Collection of useful snippets
-Plug 'honza/vim-snippets'
+"Plug 'honza/vim-snippets'
 " Completer for vim
-Plug 'Valloric/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 " Syntax checker - currently testing ALE
 "Plug 'scrooloose/syntastic'
 Plug 'dense-analysis/ale'
@@ -25,6 +25,10 @@ Plug 'lervag/vimtex', {'for': 'tex'}
 " Allows entity/component copy/paste
 Plug 'JBlocklove/VIP', {'for': 'vhdl'}
 
+""""""""""""""""""""""TESTING""""""""""""""""""""""""
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdcommenter'
+Plug 'mbbill/undotree'
+Plug 'xolox/vim-notes'
+Plug 'xolox/vim-misc'
 call plug#end()
-
-

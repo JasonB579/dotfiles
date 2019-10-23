@@ -6,17 +6,11 @@
 
 echo "Backing up previous neomutt config"
 
-if [ -r "${HOME}/.msmtprc" ]; then
-        mv ${HOME}/.msmtprc ${HOME}/.dotfiles-bak/
+if [ -r "${HOME}/.mailrc" ]; then
+        mv ${HOME}/.mailrc ${HOME}/.dotfiles-bak/
 fi
-if [ -r "${HOME}/.msmtp" ]; then
-        mv ${HOME}/.msmtp ${HOME}/.dotfiles-bak/
-fi
-if [ -r "${HOME}/.offlineimap" ]; then
-        mv ${HOME}/.msmtprc ${HOME}/.dotfiles-bak/
-fi
-if [ -r "${HOME}/.offlineimaprc" ]; then
-        mv ${HOME}/.msmtprc ${HOME}/.dotfiles-bak/
+if [ -r "${HOME}/.mbsyncrc" ]; then
+        mv ${HOME}/.mbsyncrc ${HOME}/.dotfiles-bak/
 fi
 if [ -r "${HOME}/.config/mutt" ]; then
         mv ${HOME}/.config/neomutt ${HOME}/.dotfiles-bak/
@@ -24,7 +18,12 @@ fi
 
 
 # mutt-wizard install
-git clone https://github.com/LukeSmithxyz/mutt-wizard.git ${HOME}/.config/mutt
+cd /tmp
+git clone https://github.com/LukeSmithxyz/mutt-wizard.git
+cd mutt-wizard
+sudo make install
+cd -
+rm -rf /tmp/mutt-wizard
 
 # my configs
 ln -sfv "${PACKAGE_INSTALL}/config/mailcap" "${HOME}/.config/mutt/mailcap"

@@ -3,11 +3,11 @@ set laststatus=2 " no display fix
 set noshowmode
 
 let g:lightline = {
-      \ 'colorscheme': 'powerline',
+      \ 'colorscheme': 'one',
       \ 'mode_map': { 'c': 'NORMAL' },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
-      \   'right': [ [ 'lineinfo', 'syntasticstatus' ],
+      \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
       \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
@@ -20,7 +20,6 @@ let g:lightline = {
       \   'filetype': 'LightlineFiletype',
       \   'fileencoding': 'LightlineFileencoding',
       \   'mode': 'LightlineMode',
-      \   'syntasticstatus': 'SyntasticStatuslineFlag',
       \ },
       \ 'separator': { 'left': '', 'right': ''  },
       \ 'subseparator': { 'left': '|', 'right': '|' }

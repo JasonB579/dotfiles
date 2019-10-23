@@ -11,7 +11,7 @@ DOTFILES_INSTALLED_LEN=""
 git_name="%git-name%"
 git_email="%git-email%"
 
-TMUX_AS_SHELL="" # Use tmux as shell
+TMUX_AS_SHELL="0" # Use tmux as shell
 
 # "Secret" Settings
 PROMPT_POWERLINE="" # Pretty powerline prompt

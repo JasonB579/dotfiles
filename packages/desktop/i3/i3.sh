@@ -28,18 +28,14 @@ sudo ln -sfv ${PACKAGE_INSTALL}/config/lock /usr/bin/lock
 sudo ln -sfv ${PACKAGE_INSTALL}/config/lock /usr/local/bin/lock
 
 ###############################
-#        XFCE Terminal        #
+#     st & URxvt Terminals    #
 ###############################
 
-echo "Setting up xfce terminal"
+echo "Making st terminal"
 
-mkdir -p $HOME/.config/xfce4/terminal/
-
-ln -sfv ${PACKAGE_INSTALL}/config/terminalrc $HOME/.config/xfce4/terminal/
-
-###############################
-#            URxvt            #
-###############################
+cd ${PACKAGE_INSTALL}/../st
+sudo make install
+cd -
 
 echo "Setting up URxvt"
 
@@ -54,6 +50,7 @@ echo "Setting up Rofi"
 mkdir -p $HOME/.config/rofi/
 
 ln -sfv ${PACKAGE_INSTALL}/config/rofi.config $HOME/.config/rofi/config
+ln -sfv ${PACKAGE_INSTALL}/config/clean_purple.rasi $HOME/.config/rofi/clean_purple.rasi
 
 ###############################
 #            Compton          #
@@ -62,3 +59,12 @@ ln -sfv ${PACKAGE_INSTALL}/config/rofi.config $HOME/.config/rofi/config
 echo "Setting up Compton"
 
 ln -sfv ${PACKAGE_INSTALL}/config/compton.conf $HOME/.config/compton.conf
+
+###############################
+#            Dunst			  #
+###############################
+
+echo "Setting up Dunst"
+
+ln -sfv ${PACKAGE_INSTALL}/config/dunstrc ${HOME}/.config/dunst/dunstrc
+
